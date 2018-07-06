@@ -9,27 +9,27 @@
         <property name="endingDelimiter" value="`"/>
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="com.imooc.utils.MyMapper"/>
+            <property name="mappers" value="com.liulu.utils.MyMapper"/>
         </plugin>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/leecx"
+                        connectionURL="jdbc:mysql://localhost:3306/springboot?characterEncoding=utf8&amp;useSSL=true"
                         userId="root"
-                        password="root">
+                        password="12345678">
         </jdbcConnection>
 
         <!-- 对于生成的pojo所在包 -->
-        <javaModelGenerator targetPackage="com.imooc.pojo" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.liulu.pojo" targetProject="src/main/java"/>
 
-		<!-- 对于生成的mapper所在目录 -->
+        <!-- 对于生成的mapper所在目录 -->
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
 
-		<!-- 配置mapper对应的java映射 -->
-        <javaClientGenerator targetPackage="com.imooc.mapper" targetProject="src/main/java"
+        <!-- 配置mapper对应的java映射 -->
+        <javaClientGenerator targetPackage="com.liulu.dao" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
 
-		<table tableName="sys_user"></table>
-		 
+        <table tableName="user"></table>
+
     </context>
 </generatorConfiguration>
