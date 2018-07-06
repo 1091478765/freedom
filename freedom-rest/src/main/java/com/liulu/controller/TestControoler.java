@@ -1,7 +1,8 @@
 package com.liulu.controller;
 
-import com.liulu.service.test.TestServiceImpl;
+import com.liulu.service.test.impl.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +15,7 @@ public class TestControoler {
 
 
     @Autowired
-    private TestServiceImpl testService;
+    private TestService testService;
 
     @RequestMapping(value = "index")
     public String index(){

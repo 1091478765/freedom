@@ -12,14 +12,14 @@
 	<description>Demo project for Spring Boot</description>
 
 	<modules>
+		<module>freedom-pojo</module>
 		<module>freedom-dao</module>
 		<module>freedom-common</module>
 		<module>freedom-service</module>
 		<module>freedom-activity</module>
-		<module>freedom-rest</module>
 		<module>freedom-web</module>
 		<module>freedom-schedule</module>
-
+		<module>freedom-rest</module>
 	</modules>
 
 	<parent>
@@ -54,11 +54,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass></mainClass>
+					<mainClass>com.liulu.FreedomRestApplication</mainClass>
+					<layout>ZIP</layout>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
