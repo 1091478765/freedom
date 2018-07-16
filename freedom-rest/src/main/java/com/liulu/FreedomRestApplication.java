@@ -13,7 +13,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 public class FreedomRestApplication {
 
 	public static void main(String[] args) {
-git 
+
 		/*Class[] clazzs = new Class[3];
 		clazzs[0] = FreedomRestApplication.class;
 		clazzs[1] = FreedomServiceApplication.class;
