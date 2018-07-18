@@ -1,0 +1,4 @@
+com\liulu\utils\GeneratorDisplay.class
+com\liulu\utils\MyMapper.class
+com\liulu\pojo\User.class
+com\liulu\dao\UserMapper.class
