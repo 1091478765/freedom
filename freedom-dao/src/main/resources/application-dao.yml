@@ -12,8 +12,8 @@ spring:
       stat-view-servlet:
         allow: true
 #mybatis:
-#  mapper-locations: classPath:mappering/*.xml
-#  type-aliases-package: com.liulu.dao.entity
+#  mapper-locations: classPath:mapper/*.xml
+#  type-aliases-package: com.liulu.pojo
 
 
 

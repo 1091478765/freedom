@@ -1,6 +1,7 @@
 package com.liulu.service.test.impl;
 
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Service;
 
 /**
  * @Description:
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @Last version: 2.1.0
  */
 @ComponentScan(basePackages = {"com.liulu.service"})
+
 public interface TestService {
 
     public String index();

@@ -14,11 +14,6 @@ public class FreedomRestApplication {
 
 	public static void main(String[] args) {
 
-		/*Class[] clazzs = new Class[3];
-		clazzs[0] = FreedomRestApplication.class;
-		clazzs[1] = FreedomServiceApplication.class;
-		clazzs[2] = FreedomDaoApplication.class;
-*/
 		SpringApplication.run(FreedomRestApplication.class, args);
 		//SpringApplication.run(clazzs, args);
 	}
