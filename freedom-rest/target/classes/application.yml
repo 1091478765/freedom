@@ -1,7 +1,0 @@
-spring:
-  profiles:
-<<<<<<< Updated upstream
-    active: dao
-=======
-    active:dao
->>>>>>> Stashed changes
