@@ -23,7 +23,7 @@
 /nbbuild/
 /dist/
 /nbdist/
-/target/
+target/
 /.nb-gradle/
 
 
