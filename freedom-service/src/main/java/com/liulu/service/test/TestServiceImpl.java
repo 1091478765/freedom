@@ -1,10 +1,15 @@
 package com.liulu.service.test;
 
+import com.github.pagehelper.PageHelper;
 import com.liulu.dao.UserMapper;
 import com.liulu.pojo.User;
 import com.liulu.service.test.impl.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -18,9 +23,15 @@ public class TestServiceImpl implements TestService{
     private UserMapper userMapper;
 
     @Override
-    public String index(){
-        List<User> list = userMapper.selectAll();
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public List<User> index(){
+        PageHelper pageHelper = new PageHelper();
+        PageHelper.startPage(1, 10);
+        Example example = new Example(User.class);
+        Example.Criteria criteria = example.createCriteria();
+        //criteria.andEqualTo(1);
+        List<User> list = userMapper.selectByExample(example);
         System.out.print(list.size());
-        return "service";
+        return list;
     }
 }

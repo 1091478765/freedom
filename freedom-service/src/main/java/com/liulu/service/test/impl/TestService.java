@@ -1,7 +1,10 @@
 package com.liulu.service.test.impl;
 
+import com.liulu.pojo.User;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Description:
@@ -12,9 +15,7 @@ import org.springframework.stereotype.Service;
  * @File Name: TestService
  * @Last version: 2.1.0
  */
-@ComponentScan(basePackages = {"com.liulu.service"})
-
 public interface TestService {
 
-    public String index();
+    public List<User> index();
 }

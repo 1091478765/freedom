@@ -11,10 +11,19 @@ spring:
       test-on-borrow: true
       stat-view-servlet:
         allow: true
-#mybatis:
-#  mapper-locations: classPath:mapper/*.xml
-#  type-aliases-package: com.liulu.pojo
-
-
+mybatis:
+  type-aliases-package: com.liulu.pojo
+  mapper-locations: classpath:mapper/*.xml
+# 通用 Mapper 配置
+mapper:
+  mappers: com.liulu.utils.MyMapper
+  not-empty: false
+  identity: MYSQL
+# 分页插件配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params=count: countSql
 
 
