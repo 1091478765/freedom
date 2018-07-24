@@ -1,6 +1,8 @@
 package com.liulu.controller;
 
 import com.liulu.common.RsBody;
+import com.liulu.redisUtils.RedisUtils;
+import com.liulu.service.redisService.RedisService;
 import com.liulu.service.test.impl.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -19,9 +21,17 @@ public class TestControoler {
     @Autowired
     private TestService testService;
 
+    @Autowired
+    private RedisService redisService;
+
+    @Autowired
+    private RedisUtils redisUtils;
+
     @RequestMapping(value = "index")
     public Object index(){
         RsBody rsBody = new RsBody();
+        //redisService.insertKeyValue("123","321");
+        redisUtils.insertKeyValue("123123","123r");
         return testService.index();
     }
 }

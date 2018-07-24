@@ -12,6 +12,7 @@ import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by 刘璐 on 2018/7/5.
@@ -23,7 +24,7 @@ public class TestServiceImpl implements TestService{
     private UserMapper userMapper;
 
     @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
+    @Transactional(propagation = Propagation.REQUIRED)
     public List<User> index(){
         PageHelper pageHelper = new PageHelper();
         PageHelper.startPage(1, 10);
@@ -31,6 +32,12 @@ public class TestServiceImpl implements TestService{
         Example.Criteria criteria = example.createCriteria();
         //criteria.andEqualTo(1);
         List<User> list = userMapper.selectByExample(example);
+        User user = new User();
+        user.setUuid(UUID.randomUUID().toString());
+        user.setName("liulu");
+        userMapper.insert(user);
+       // int i = 1/0;
+
         System.out.print(list.size());
         return list;
     }
