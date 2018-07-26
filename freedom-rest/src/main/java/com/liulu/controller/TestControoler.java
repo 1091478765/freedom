@@ -31,7 +31,7 @@ public class TestControoler {
     public Object index(){
         RsBody rsBody = new RsBody();
         //redisService.insertKeyValue("123","321");
-        redisUtils.insertKeyValue("123123","123r");
+        redisUtils.set("123123","123r");
         return testService.index();
     }
 }
