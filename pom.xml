@@ -55,17 +55,23 @@
 		</dependency>
 	</dependencies>
 
-	<!--<build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.liulu.FreedomRestApplication</mainClass>
-					<layout>ZIP</layout>
+					<mainClass>com.liulu.FreedomWebApplication</mainClass>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
-	</build>-->
+	</build>
 
 </project>
