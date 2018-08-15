@@ -1,5 +1,6 @@
 package com.liulu.config;
 
+import com.liulu.interceptor.RequestInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -13,7 +14,7 @@ public class RestConfig extends WebMvcConfigurerAdapter{
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-        registry.addInterceptor(new )
+        registry.addInterceptor(new RequestInterceptor());
         super.addInterceptors(registry);
     }
 }

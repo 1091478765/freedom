@@ -16,6 +16,15 @@ public enum RsEnum {
         this.msg = msg;
     }
 
+    public static RsEnum getEnumByKey(String key){
+        for (RsEnum rsEnum : RsEnum.values()){
+            if(rsEnum.getStatus().equals(key)){
+                return rsEnum;
+            }
+        }
+        return null;
+    }
+
     public String getStatus() {
         return status;
     }

@@ -1,5 +1,7 @@
 package com.liulu.common;
 
+import com.liulu.Enums.RsEnum;
+
 /**
  * 响应实体
  * Created by 刘璐 on 2018/7/20.
@@ -31,6 +33,13 @@ public class RsBody {
 
     public void setData(Object data) {
         this.data = data;
+    }
+
+    public RsBody success(){
+        RsBody rsBody = new RsBody();
+        rsBody.setStatus(RsEnum.success.getStatus());
+        rsBody.setStatus(RsEnum.success.getMsg());
+        return rsBody;
     }
 
     @Override
