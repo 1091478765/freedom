@@ -1,5 +1,6 @@
 package com.liulu.controller;
 
+import com.liulu.annotation.LoginCheck;
 import com.liulu.common.RsBody;
 import com.liulu.redisUtils.RedisUtils;
 import com.liulu.service.redisService.RedisService;
@@ -28,6 +29,7 @@ public class TestControoler {
     private RedisUtils redisUtils;
 
     @RequestMapping(value = "index")
+    @LoginCheck
     public Object index(){
         RsBody rsBody = new RsBody();
         //redisService.insertKeyValue("123","321");

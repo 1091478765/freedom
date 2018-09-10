@@ -4,7 +4,10 @@ package com.liulu.Enums;
  * Created by 刘璐 on 2018/7/20.
  */
 public enum RsEnum {
-    success("0000","成功");
+    SUCCESS("0000","成功"),
+    LOGIN_EXCEPTION("1001","请登录")
+
+    ;
 
 
     private String status;

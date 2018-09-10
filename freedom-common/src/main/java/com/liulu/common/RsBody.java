@@ -37,8 +37,8 @@ public class RsBody {
 
     public RsBody success(){
         RsBody rsBody = new RsBody();
-        rsBody.setStatus(RsEnum.success.getStatus());
-        rsBody.setStatus(RsEnum.success.getMsg());
+        rsBody.setStatus(RsEnum.SUCCESS.getStatus());
+        rsBody.setStatus(RsEnum.SUCCESS.getMsg());
         return rsBody;
     }
 
