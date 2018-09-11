@@ -25,3 +25,11 @@ spring:
       max-idle: 10
 # 连接池中的最小空闲连接
       min-idle: 2
+
+  activemq:
+    broker-url: tcp://localhost:61616
+    user: admin
+    password: admin
+    pool:
+      enabled: false
+
