@@ -6,6 +6,7 @@ import com.liulu.Enums.RsEnum;
 import com.liulu.annotation.LoginCheck;
 import com.liulu.common.RsBody;
 import com.liulu.pojo.User;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.method.HandlerMethod;
@@ -25,6 +26,7 @@ import java.util.Map;
 /**
  * Created by 刘璐 on 2018/7/26.
  */
+@Slf4j
 public class RequestInterceptor extends HandlerInterceptorAdapter {
 
     private static final Logger logger = LoggerFactory.getLogger(RequestInterceptor.class);
@@ -60,6 +62,7 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
             HttpSession session = request.getSession();
             User user = (User) session.getAttribute("user");
             if (user != null) {
+                log.info("当前请求人为：{}",user.toString());
                 return true;
             } else {
                 PrintWriter out = response.getWriter();

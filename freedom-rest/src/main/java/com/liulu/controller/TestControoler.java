@@ -1,7 +1,9 @@
 package com.liulu.controller;
 
+import com.liulu.SpringUtil.SpringUtils;
 import com.liulu.annotation.LoginCheck;
 import com.liulu.common.RsBody;
+import com.liulu.pojo.User;
 import com.liulu.redisUtils.RedisUtils;
 import com.liulu.service.activeMqService.ActiveMqService;
 import com.liulu.service.redisService.RedisService;
@@ -43,8 +45,22 @@ public class TestControoler {
     public Object index(){
         RsBody rsBody = new RsBody();
         //redisService.insertKeyValue("123","321");
-        redisUtils.set("123123","123r");
-        return testService.index();
+        //redisUtils.set("123123","123r");
+        //return testService.index();
+        return null;
+    }
+
+    @RequestMapping(value = "login")
+    public Object login(){
+        RsBody rsBody = new RsBody();
+        //redisService.insertKeyValue("123","321");
+        User user = new User();
+        user.setName("liulu");
+        user.setPassword("123456");
+        SpringUtils.getRequest().getSession().setAttribute("user",user);
+        //redisUtils.set("123123","123r");
+        //return testService.index();
+        return "";
     }
 
     @RequestMapping(value = "sendMessage")
