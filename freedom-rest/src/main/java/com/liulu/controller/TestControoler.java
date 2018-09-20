@@ -6,6 +6,7 @@ import com.liulu.redisUtils.RedisUtils;
 import com.liulu.service.activeMqService.ActiveMqService;
 import com.liulu.service.redisService.RedisService;
 import com.liulu.service.test.impl.TestService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -21,6 +22,7 @@ import java.util.Date;
  */
 
 @RestController
+@Slf4j
 public class TestControoler {
 
 
