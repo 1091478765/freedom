@@ -3,6 +3,7 @@ package com.liulu.leetCode;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -11,11 +12,7 @@ import java.util.Set;
 @Slf4j
 public class Solution {
 
-     public class ListNode {
-         int val;
-         ListNode next;
-        ListNode(int x) { val = x; }
- }
+
 
     public static int[] twoSum(int[] nums, int target) {
         for(int i= 0 ; i < nums.length-1; i++){
@@ -48,6 +45,22 @@ public class Solution {
             set.add(ch);
         }
         return true;
+    }
+
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+        return null;
+
+    }
+    public Map<Integer,Integer> addVal(Integer val1, Integer val2){
+        Integer total = val1 + val2;
+        Integer targetNum = 0;
+        Integer targetNum2 = 0;
+        if (total > 9){
+            targetNum = 1;
+            targetNum2 = total%10;
+        }
+        return null;
     }
 
     public static void main(String[] args) {

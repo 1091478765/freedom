@@ -49,7 +49,12 @@
 			<artifactId>spring-web</artifactId>
 			<version>5.0.7.RELEASE</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-all -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-all -->
 	<!--	<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-all</artifactId>
