@@ -34,30 +34,22 @@ public class Pdf2ImgUtil {
     /**
      *
      * @param sourceUrl
+     *              pdf文件url地址
      * @param targetUrl
+     *              生成图片url
      * @throws Exception
      */
     public static String pdf2Img(String sourceUrl, String targetUrl) throws Exception{
         Document document = new Document();
-        try {
-            document.setFile(sourceUrl);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
+        document.setFile(sourceUrl);
         float scale = 2f;
         float rotation = 0f;
         for (int i = 0; i < document.getNumberOfPages(); i++) {
             BufferedImage image = (BufferedImage)document.getPageImage(i, GraphicsRenderingHints.SCREEN,
                     Page.BOUNDARY_CROPBOX, rotation, scale);
             RenderedImage rendImage = image;
-            try {
-                System.out.println("/t capturing page " + i);
-                File file = new File(targetUrl);
-                ImageIO.write(rendImage, "png", file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            File file = new File(targetUrl);
+            ImageIO.write(rendImage, "png", file);
             image.flush();
         }
         document.dispose();

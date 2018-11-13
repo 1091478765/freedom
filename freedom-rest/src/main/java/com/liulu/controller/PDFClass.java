@@ -166,7 +166,7 @@ public class PDFClass {
         image.scaleToFit(signRect.getWidth(), signRect.getHeight());
         // 添加图片
         image.setAbsolutePosition(x, y);
-        //测试暂时删除
+
         under.addImage(image);
 
         stamper.close();
