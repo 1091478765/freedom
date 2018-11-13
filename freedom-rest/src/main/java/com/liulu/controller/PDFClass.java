@@ -118,11 +118,17 @@ public class PDFClass {
         createPDF("C:\\Users\\VULCAN\\Desktop\\JTPC4~G{HQP}WSCPK345IQK.png",data);
     }*/
 
-    /*public static void main(String[] args) throws Exception {
+    /***
+     * 可以使用
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
         // 模板文件路径
-        String templatePath = "C:\\Users\\VULCAN\\Desktop\\征信确认函2.pdf";
+        //String templatePath = "C:\\Users\\VULCAN\\Desktop\\征信确认函2.pdf";
+        String templatePath = "target.pdf";
         // 生成的文件路径
-        String targetPath = "target.pdf";
+        String targetPath = "target1.pdf";
         // 书签名
         String fieldName = "image";
         // 图片路径
@@ -136,7 +142,7 @@ public class PDFClass {
         AcroFields form = stamper.getAcroFields();
         form.addSubstitutionFont(BaseFont.createFont("STSong-Light","UniGB-UCS2-H", BaseFont.NOT_EMBEDDED));
 
-        Map<String, Object> data = new HashMap<String, Object>();
+        /*Map<String, Object> data = new HashMap<String, Object>();
         data.put("userName", "刘璐");
         data.put("idNum", "340827199302235810");
         data.put("year", "2018");
@@ -144,7 +150,7 @@ public class PDFClass {
         data.put("day", "13");
         for (String key : data.keySet()) {
             form.setField(key,data.get(key).toString());
-        }
+        }*/
 
         // 通过域名获取所在页和坐标，左下角为起点
         int pageNo = form.getFieldPositions(fieldName).get(0).page;
@@ -160,13 +166,14 @@ public class PDFClass {
         image.scaleToFit(signRect.getWidth(), signRect.getHeight());
         // 添加图片
         image.setAbsolutePosition(x, y);
+        //测试暂时删除
         under.addImage(image);
 
         stamper.close();
         reader.close();
-    }*/
+    }
 
-    public static void main(String[] args) throws Exception{
+/*    public static void main(String[] args) throws Exception{
 
         String filePath = "target.pdf";
         Document document = new Document();
@@ -213,7 +220,7 @@ public class PDFClass {
 
         document.dispose();
 
-    }
+    }*/
 
 
 
