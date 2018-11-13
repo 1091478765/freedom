@@ -1,6 +1,7 @@
 package com.liulu.java8;
 
 import com.google.common.collect.Collections2;
+import org.apache.catalina.User;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -23,6 +24,7 @@ public class Demo {
         list.add(1);
         list.add(2);
         list.add(3);
+        list.stream().map(item -> item*3).collect(Collectors.toList());
        /* list.add(4);
         list.add(5);*/
         String[] strings = new String[]{"a","b","c"};
@@ -33,6 +35,9 @@ public class Demo {
                 .reduce((sum, count) -> sum += count).get();
 
         System.out.println(integer);
+
+        list.forEach(e -> System.out.println(e));
+
 
       /*  list.stream().map((i) -> i * 3).forEach(System.out :: println);
         System.out.println(list);*/
@@ -68,6 +73,8 @@ public class Demo {
 
         System.out.println("筛选列表: " + filtered);
         String mergedString = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));*/
+
+        // Group tasks by their status
 
     }
 }

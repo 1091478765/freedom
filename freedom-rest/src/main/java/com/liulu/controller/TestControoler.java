@@ -1,5 +1,8 @@
 package com.liulu.controller;
 
+import com.deepoove.poi.XWPFTemplate;
+import com.deepoove.poi.data.PictureRenderData;
+import com.deepoove.poi.util.BytePictureUtils;
 import com.liulu.SpringUtil.SpringUtils;
 import com.liulu.annotation.LoginCheck;
 import com.liulu.common.RsBody;
@@ -16,8 +19,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by 刘璐 on 2018/7/5.
@@ -76,6 +82,36 @@ public class TestControoler {
     public Object receiveQueue(){
         //activeMqService.receiveQueue("");
         return "";
+    }
+
+
+
+
+    @RequestMapping(value = "receiveQueue")
+    public Object test(){
+        //activeMqService.receiveQueue("");
+        List<User> users = Arrays.asList();
+        Map<String,List<User>> map = users.stream().collect(Collectors.groupingBy(user -> user.getGender()));
+        return "";
+    }
+
+    public static void main(String[] args) throws Exception{
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        map.put("userName","刘璐");
+		map.put("companyName","红星美凯龙");
+		map.put("idNum","340827199302235810");
+		Calendar calendar = Calendar.getInstance();
+		map.put("year", calendar.get(Calendar.YEAR) + "");
+		map.put("month", (calendar.get(Calendar.MONTH) + 101 + "").substring(1));
+		map.put("day", (calendar.get(Calendar.DAY_OF_MONTH) + 100 + "").substring(1));
+        byte[] localByteArray = BytePictureUtils.getLocalByteArray(new File("C:\\Users\\lenovo\\Desktop\\front.png"));
+        map.put("localBytePicture", new PictureRenderData(100, 50, ".png", localByteArray));
+        XWPFTemplate template = XWPFTemplate.compile("C:\\Users\\lenovo\\Desktop\\授权书.docx").render(map);
+        FileOutputStream out = new FileOutputStream("out_template1.docx");
+        template.write(out);
+        out.flush();
+        out.close();
+        template.close();
     }
 
 }
